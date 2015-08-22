@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<dataset>
+    <table name="author">
+        <column>id</column>
+        <column>name</column>
+        <column>biography</column>
+        <row>
+            <value>77707f1b-400c-3fe0-b656-c0b14499a71d</value>
+            <value>Suzanne Collins</value>
+            <value>Suzanne Marie Collins is an American television writer and novelist, best known as the author of The Underland Chronicles and The Hunger Games trilogy</value>
+        </row>
+        <row>
+            <value>f075512f-9734-304c-b839-b86174143c07</value>
+            <value>Anne McCaffrey</value>
+            <null />
+        </row>
+    </table>
+    <table name="book">
+        <column>id</column>
+        <column>author_id</column>
+        <column>title</column>
+        <column>isbn</column>
+        <column>date_published</column>
+        <row>
+            <value>d418884d-a8a6-3656-b459-ebabd754e332</value>
+            <value>77707f1b-400c-3fe0-b656-c0b14499a71d</value>
+            <value>Gregor the Overlander</value>
+            <value>9780439678131</value>
+            <value>2003-09-01</value>
+        </row>
+        <row>
+            <value>04bd0716-055b-37a6-9aa7-0adc89597944</value>
+            <value>77707f1b-400c-3fe0-b656-c0b14499a71d</value>
+            <value>Gregor and the Prophecy of Bane</value>
+            <value>9780439650762</value>
+            <value>2004-09-01</value>
+        </row>
+        <row>
+            <value>00a29310-207c-388f-86ef-1ad4b33b9793</value>
+            <value>77707f1b-400c-3fe0-b656-c0b14499a71d</value>
+            <value>Gregor and the Curse of the Warmbloods</value>
+            <value>9780439656245</value>
+            <value>2005-07-01</value>
+        </row>
+    </table>
+</dataset>

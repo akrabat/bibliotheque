@@ -55,6 +55,7 @@ CREATE TABLE IF NOT EXISTS book (
   author_id VARCHAR(36) NOT NULL,
   title VARCHAR(100) NOT NULL,
   isbn VARCHAR(13),
+  date_published DATE,
 
   FOREIGN KEY (author_id) REFERENCES author (id)
 );
