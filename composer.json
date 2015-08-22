@@ -1,0 +1,21 @@
+{
+    "name": "akrabat/bibliotheque",
+    "description": "Simple domain for use with example applications.",
+    "license": "BSD-3-Clause",
+    "type": "project",
+    "keywords": [],
+    "authors": [
+        {
+            "name": "Rob Allen",
+            "email": "rob@akrabat.com",
+            "homepage": "http://akrabat.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Bibliotheque\\": "src"
+        }
+    },
+    "require": {
+    }
+}
