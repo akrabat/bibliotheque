@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<dataset>
+    <table name="author">
+        <column>id</column>
+        <column>name</column>
+        <column>biography</column>
+        <row>
+            <value>77707f1b-400c-3fe0-b656-c0b14499a71d</value>
+            <value>Suzanne Collins</value>
+            <value>Suzanne Marie Collins is an American television writer and novelist, best known as the author of The Underland Chronicles and The Hunger Games trilogy</value>
+        </row>
+        <row>
+            <value>f075512f-9734-304c-b839-b86174143c07</value>
+            <value>Anne McCaffrey</value>
+            <null />
+        </row>
+    </table>
+</dataset>

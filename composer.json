@@ -11,11 +11,18 @@
             "homepage": "http://akrabat.com"
         }
     ],
+    "require": {
+    },
+    "require-dev": {
+    },
     "autoload": {
         "psr-4": {
             "Bibliotheque\\": "src"
         }
     },
-    "require": {
+    "autoload-dev": {
+        "psr-4": {
+            "BibliothequeTest\\": "test"
+        }
     }
 }
