@@ -21,6 +21,20 @@ class BookMapperTest extends DatabaseTestCase
         $this->assertSame('04bd0716-055b-37a6-9aa7-0adc89597944', $books[1]->getId());
     }
 
+    public function testFetchByAuthor()
+    {
+        $mapper = new BookMapper($this->connection->getConnection());
+
+        $books = $mapper->fetchByAuthor('77707f1b-400c-3fe0-b656-c0b14499a71d');
+        $this->assertSame(3, count($books));
+        $this->assertTrue($books[1] instanceof Book);
+        $this->assertSame('04bd0716-055b-37a6-9aa7-0adc89597944', $books[1]->getId());
+
+        $books = $mapper->fetchByAuthor('f075512f-9734-304c-b839-b86174143c07');
+        $this->assertTrue(is_array($books));
+        $this->assertSame(0, count($books));
+    }
+
     public function testLoadById()
     {
         $mapper = new BookMapper($this->connection->getConnection());

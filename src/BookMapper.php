@@ -19,12 +19,40 @@ class BookMapper
      */
     public function fetchAll()
     {
-        $sql = "SELECT id, author_id, title, isbn, date_published FROM book order by date_published, title";
+        $sql = "SELECT id, author_id, title, isbn, date_published FROM book ORDER BY date_published, title";
 
         $statement = $this->dbAdapter->prepare($sql);
 
         $data = [];
         if ($statement->execute()) {
+            $statement->setFetchMode(PDO::FETCH_ASSOC);
+
+            $rows = $statement->fetchAll();
+            foreach ($rows as $row) {
+                $data[] = new Book($row);
+            }
+        }
+
+        return $data;
+    }
+
+    /**
+     * Fetch all Books for a given author, ordered by date_published and then title
+     *
+     * @return Book[]
+     */
+    public function fetchByAuthor($authorId)
+    {
+        $sql = "SELECT id, author_id, title, isbn, date_published FROM book
+                WHERE author_id = :author_id ORDER BY date_published, title";
+        $params = [
+            'author_id' => $authorId,
+        ];
+
+        $statement = $this->dbAdapter->prepare($sql);
+
+        $data = [];
+        if ($statement->execute($params)) {
             $statement->setFetchMode(PDO::FETCH_ASSOC);
 
             $rows = $statement->fetchAll();
