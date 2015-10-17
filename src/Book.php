@@ -2,8 +2,9 @@
 namespace Bibliotheque;
 
 use InvalidArgumentException;
+use JsonSerializable;
 
-class Book
+class Book implements JsonSerializable
 {
     protected $id;
     protected $authorId;
@@ -163,5 +164,31 @@ class Book
         }
 
         return $this;
+    }
+
+    /**
+     * Return the data as an array
+     *
+     * @return array
+     */
+    public function asArray()
+    {
+        return [
+            'id' => $this->getId(),
+            'authorId' => $this->getAuthorId(),
+            'title' => $this->getTitle(),
+            'isbn' => $this->getIsbn(),
+            'datePublished' => $this->getDatePublished(),
+        ];
+    }
+
+    /**
+     * make json_encode do the right thing
+     *
+     * @return array
+     */
+    public function jsonSerialize()
+    {
+        return $this->asArray();
     }
 }
